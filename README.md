@@ -28,14 +28,318 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the text “calculator operation”.
-Developed by:
-Registeration Number :
+Developed by:KABIL S
+Registeration Number :212222040067
 */
+```
+In activity_main.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CA94D8"
+    android:backgroundTint="#EF8E8E"
+    tools:context=".MainActivity">
+
+    <!-- Text View to display our basic heading of "calculator"-->
+    <TextView
+        android:layout_width="194dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="502dp"
+        android:scrollbarSize="30dp"
+        android:text=" CALCULATOR"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Edit Text View to input the values -->
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="258dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="416dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="number"
+        android:onClick="clearTextNum1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Edit Text View to input 2nd value-->
+
+    <!-- Text View to display result -->
+
+    <!-- A button to perform 'sum' operation -->
+
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="257dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="374dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="number"
+        android:onClick="clearTextNum2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.651" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="253dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="287dp"
+        android:background="@android:color/white"
+        android:text="result"
+        android:textAlignment="center"
+        android:textColor="#57000000"
+        android:textColorHighlight="#FF0000"
+        android:textColorHint="#000000"
+        android:textColorLink="@color/black"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
+
+    <!-- A button to perform subtraction operation. -->
+
+    <!-- A button to perform division. -->
+
+    <!-- A button to perform multiplication. -->
+
+    <!-- A button to perform a modulus function. -->
+
+    <!-- A button to perform a power function. -->
+
+    <Button
+        android:id="@+id/sum"
+        android:layout_width="94dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        android:backgroundTint="#9C27B0"
+        android:onClick="doSum"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="113dp"
+        android:backgroundTint="#9C27B0"
+        android:onClick="doSub"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/sum"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.816" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="268dp"
+        android:backgroundTint="#9C27B0"
+        android:onClick="doDiv"
+        android:text="/"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#9C27B0"
+        android:onClick="doMul"
+        android:text="x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.816" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="103dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginBottom="199dp"
+        android:backgroundTint="#9C27B0"
+        android:onClick="doMod"
+        android:text="%(mod)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/pow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#9C27B0"
+        android:onClick="doPow"
+        android:text="n1^n2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+```
+In MainActivity.java
+```
+package com.example.calculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText e1, e2;
+    TextView t1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        e1 = findViewById(R.id.num1);
+        e2 = findViewById(R.id.num2);
+        t1 = findViewById(R.id.result);
+    }
+
+    private boolean getNumbers() {
+        String s1 = e1.getText().toString();
+        String s2 = e2.getText().toString();
+
+        if(s1.isEmpty() || s2.isEmpty()) {
+            return false;
+        }
+
+        try {
+            num1 = Integer.parseInt(s1);
+            num2 = Integer.parseInt(s2);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public void doSum(View v) {
+        if (getNumbers()) {
+            int sum = num1 + num2;
+            t1.setText(Integer.toString(sum));
+        } else {
+            t1.setText("Error: Please enter valid numbers");
+        }
+    }
+
+    public void doSub(View v) {
+        if (getNumbers()) {
+            int diff = num1 - num2;
+            t1.setText(Integer.toString(diff));
+        } else {
+            t1.setText("Error: Please enter valid numbers");
+        }
+    }
+
+    public void doMul(View v) {
+        if (getNumbers()) {
+            int product = num1 * num2;
+            t1.setText(Integer.toString(product));
+        } else {
+            t1.setText("Error: Please enter valid numbers");
+        }
+    }
+
+    public void doDiv(View v) {
+        if (getNumbers()) {
+            if (num2 != 0) {
+                double result = (double) num1 / num2;
+                t1.setText(Double.toString(result));
+            } else {
+                t1.setText("Error: Cannot divide by zero");
+            }
+        } else {
+            t1.setText("Error: Please enter valid numbers");
+        }
+    }
+
+    public void doPow(View v) {
+        if (getNumbers()) {
+            double result = Math.pow(num1, num2);
+            t1.setText(Double.toString(result));
+        } else {
+            t1.setText("Error: Please enter valid numbers");
+        }
+    }
+
+    public void doMod(View v) {
+        if (getNumbers()) {
+            if (num2 != 0) {
+                int result = num1 % num2;
+                t1.setText(Integer.toString(result));
+            } else {
+                t1.setText("Error: Cannot perform modulus with zero");
+            }
+        } else {
+            t1.setText("Error: Please enter valid numbers");
+        }
+    }
+
+    private int num1, num2;
+}
+
 ```
 
 ## OUTPUT
+![Screenshot 2024-04-30 221245](https://github.com/kabilselvam/simplecalculator/assets/127846320/7da750ac-bef5-4aac-9534-fb3517405520)
 
-
+![Screenshot 2024-04-30 221302](https://github.com/kabilselvam/simplecalculator/assets/127846320/3c7bc149-a874-442a-beb5-0e9f8e3f5d84)
 
 
 ## RESULT
